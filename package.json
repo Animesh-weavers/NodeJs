@@ -1,0 +1,25 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "learn nodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Animesh-weavers/NodeJs.git"
+  },
+  "keywords": [
+    "code"
+  ],
+  "author": "animesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Animesh-weavers/NodeJs/issues"
+  },
+  "homepage": "https://github.com/Animesh-weavers/NodeJs#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
