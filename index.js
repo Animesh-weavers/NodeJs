@@ -1,7 +1,13 @@
 const express = require("express");
 const app = express();
 app.get("", (req, res) => {
-  res.send("Welcome, this is Home Page");
+  console.log(req.query);
+  res.send([
+    {
+      name: req.query.name,
+      age: req.query.age,
+    },
+  ]);
 });
 app.get("/about", (req, res) => {
   res.send("Hello, this is About Page");
