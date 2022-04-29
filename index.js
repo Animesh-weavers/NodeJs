@@ -1,15 +1,22 @@
-//nodeJS is a single threaded async language
-
-let a = 10,
-  b = 0;
-
-let waitingData = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(30);
-  }, 3000);
+const express = require("express");
+const app = express();
+const reqFilter = (req, res, next) => {
+  if (!req.query.age) {
+    res.send("Please Provide Age");
+  }
+  else if(req.query.age<18){
+    res.send("You can not access this page")
+  }
+   else {
+    next();
+  }
+};
+app.use(reqFilter);
+app.get("/", (req, res) => {
+  res.send("Welcome to home page");
+});
+app.get("/users", (req, res) => {
+  res.send("Welcome to users page");
 });
 
-waitingData.then((data) => {
-  b = data;
-  console.log(a + b);
-});
+app.listen(4000);
